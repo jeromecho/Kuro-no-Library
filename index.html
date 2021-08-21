@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <script async src="script.js"></script>
+    </head>
+    <header>
+        <h1>Library of Kuro</h1>
+        <hr>
+        <p>Café emos and internet philosophers - welcome :)</p>
+        <div id="buttons-container">
+            <button id="new-book">New Book</button>  
+        </div>  
+    </header>
+    <body>
+        <div id="container">
+        </div>
+        <div id="form">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Osamu Dazai">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="No Longer Human">
+            <label for="pages">Pages</label>
+            <input type="text" id="pages" name="pages" placeholder="290"> 
+            <div id="status">                
+                <label for="read">Read</label><br>
+                <input type="radio" id="read" name="choice" value="Read">
+                <label for="not-read">Not Read</label><br>
+                <input type="radio" id="not-read" name="choice" value="Not Read">
+            </div>
+            <label for="enjoyability">Enjoyability</label>
+            <input type="text" id="enjoyability" name="enjoyability" placeholder="9">
+            <div id="controls">
+                <button id="submit">Submit</button>
+                <button id="close">Close</button>
+            </div>
+        </div>
+        <div id="background-blur"></div>          
+    </body>
+</html>

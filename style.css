@@ -1,0 +1,83 @@
+html {
+    background-color: rgb(221, 203, 125); 
+    height: 100vh;   
+    font-family: 'Raleway', sans-serif; 
+}
+
+header {
+    align-items: center;
+    display: flex; 
+    flex-direction: column;
+    height: 25vh;
+    justify-content: center;
+}
+
+header > h1 {
+    font-size: 60px;
+}
+
+header > p {
+    font-size: 20px;
+}
+
+#container {
+    align-items: center;
+    display: flex; 
+    flex-direction: column;
+    min-height: 80vh;   
+}
+
+#buttons-container {
+    display: flex;
+    justify-content: center;
+    width: 350px; 
+}
+
+#buttons-container > button {
+    background: rgb(221, 220, 125, 0.9);
+    height: 30px;
+    margin: 20px;
+    width: 90px; 
+}
+
+#form {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgb(192,192,192);
+    color: whitesmoke;
+    display: none; /*changes to flex*/
+    flex-direction: column;
+    font-size: 20px;
+    height: 700px;
+    left: 330px;
+    position: fixed; 
+    top: 50px; 
+    width: 600px; 
+}
+
+#form > #status {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#form > label { 
+    margin: 20px;
+}
+
+#form > #controls { 
+    position: relative;
+    top: 50px;
+}
+
+#form > input {
+    height: 30px;;
+    width: 300px;
+}
+
+#controls > button {
+    font-size: 20px;;
+    margin: 0px 20px 0px 20px;
+    height: 60px; 
+    width: 120px;
+}
