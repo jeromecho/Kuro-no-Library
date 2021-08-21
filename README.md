@@ -1,18 +1,18 @@
 # Kuro-no-Library
 ## A Pleasant LIbrary Management System built with HTML/CSS, JS, JSON, Web Storage API (localStorage)
 
-##Features 
-*Author, title, pages, read status, and enjoyment inputs
-*Change read status with the click of a button 
-*Delete books easily 
-*Local data storage on localStorage 
-*Simple, intuitive UI 
+## Features 
+* Author, title, pages, read status, and enjoyment inputs
+* Change read status with the click of a button 
+* Delete books easily 
+* Local data storage on localStorage 
+* Simple, intuitive UI 
 
-##Images 
+## Images 
  
- 
+![image](https://user-images.githubusercontent.com/71617542/130335934-75ffe999-2e18-42a5-a601-600686cbe2b0.png)
 
-##Notes/Creds
+## Notes/Creds
 
 This might be one of my first projects where I myself would genuinely use the product - considering how convoluted reading lists on Notion can get if you re a frequent reader. 
 
