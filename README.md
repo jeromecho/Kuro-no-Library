@@ -16,6 +16,6 @@
 
 This might be one of my first projects where I myself would genuinely use the product - considering how convoluted reading lists on Notion can get if you re a frequent reader. 
 
-This would not have been possible without the fascinating people of the internet especially the Odin Project (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library). I am awed by this community's generosity. 
+This would not have been possible without the fascinating people of the internet especially the Odin Project (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library). 
 
 
