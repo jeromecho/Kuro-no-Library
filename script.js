@@ -2,7 +2,7 @@ const booksContainer = document.querySelector("#container");
 const form = document.querySelector("#form");
 const addButton = document.querySelector("#new-book");
 const closeButton = document.querySelector("#close");
-const submitButton = document.querySelector("#submit"); 
+const submitButton = document.querySelector("#submit");
 const authorData = document.querySelector("#author");
 const titleData = document.querySelector("#title");
 const pagesData = document.querySelector("#pages");
@@ -16,21 +16,22 @@ let books = [
     { author: "Emily Bronte", title: "Wuthering Heights", pages: "310", read: true, enjoyment: "8" },
 ];
 
-addButton.addEventListener("click", displayForm); 
-closeButton.addEventListener("click", closeForm); 
+addButton.addEventListener("click", displayForm);
+closeButton.addEventListener("click", closeForm);
 submitButton.addEventListener("click", () => {
     addToBooks();
     clearForm();
     closeForm();
-}); 
+});
 
-function Book (author, title, pages, read, enjoyment) {
-    // object constructor
-    this.author = author; 
-    this.title = title; 
-    this.pages = pages; 
-    this.read = read; 
-    this.enjoyment = enjoyment; 
+class Book {
+    constructor (author, title, pages, read, enjoyment) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.read = read;
+        this.enjoyment = enjoyment;
+    } 
 }
 
 function getReadingStatus() {
@@ -43,33 +44,33 @@ function getReadingStatus() {
 
 function addToBooks() {
     let newBook = new Book(authorData.value, titleData.value, pagesData.value, getReadingStatus(), enjoyabilityData.value);
-    books.push(newBook);  
+    books.push(newBook);
     updateLocalstorage();
     clearDisplay();
-    displayBooks(); 
+    displayBooks();
 }
 
 function displayBooks() {
-    books = JSON.parse(localStorage.getItem("books")); 
-    for (let i = 0; i < books.length; i++) { 
+    //books = JSON.parse(localStorage.getItem("books"));
+    for (let i = 0; i < books.length; i++) {
         const bookContainer = document.createElement("div");
-        bookContainer.setAttribute("data-number", i); 
+        bookContainer.setAttribute("data-number", i);
         bookContainer.style.cssText = "align-items: center; background-color: rgb(214, 236, 160, 0.5); border: 1px solid black; display: flex; height: 120px; justify-content: flex-start; position: relative; width: 750px;";
         let bookList = [];
         for (let key in books[i]) {
             if (books[i][key] === false || books[i][key] === true) {
                 books[i][key] =
-                books[i][key] ? "Read" : "Not Read"; 
+                    books[i][key] ? "Read" : "Not Read";
             } else if (books[i][key] === null) {
-                books[i][key] = ""; 
-            } 
+                books[i][key] = "";
+            }
             bookList.push(books[i][key]);
         }
         for (let j = 0; j < bookList.length; j++) {
             let descriptionPiece = document.createElement("p");
-            descriptionPiece.style.cssText = "font-family: 'Raleway', sans-serif; font-size: 20px; margin: 20px; min-width: 120px;";  
+            descriptionPiece.style.cssText = "font-family: 'Raleway', sans-serif; font-size: 20px; margin: 20px; min-width: 120px;";
             if (bookList[j] === "Read" || bookList[j] === "Not Read") {
-                descriptionPiece.addEventListener("click", function() {
+                descriptionPiece.addEventListener("click", function () {
                     if (descriptionPiece.textContent === "Read") {
                         descriptionPiece.textContent = "Not Read";
                     } else {
@@ -83,19 +84,19 @@ function displayBooks() {
             bookContainer.appendChild(descriptionPiece);
         }
         bookList = [];
-        let deleteButton = document.createElement("div"); 
+        let deleteButton = document.createElement("div");
         deleteButton.style.cssText = "background-color: rgb(220,20,60, 0.7); border-radius: 50%; height: 15px; position: absolute; right: 3px; top: 3px; width: 15px;";
         // deleteButton.setAttribute("data-number", i); 
         deleteButton.addEventListener("mouseenter", () => deleteButton.style.cssText = "background-color: rgb(248, 131, 121); border-radius: 50%; height: 15px; position: absolute; right: 3px; top: 3px; width: 15px;");
         deleteButton.addEventListener("mouseleave", () => deleteButton.style.cssText = "background-color: rgb(220, 20, 60); border-radius: 50%; height: 15px; position: absolute; right: 3px; top: 3px; width: 15px;");
-        deleteButton.addEventListener("click", function() {
-            books.splice(bookContainer.dataset.number, 1); 
+        deleteButton.addEventListener("click", function () {
+            books.splice(bookContainer.dataset.number, 1);
             updateLocalstorage();
-            clearDisplay(); 
-            displayBooks();        
+            clearDisplay();
+            displayBooks();
         });
         bookContainer.appendChild(deleteButton);
-        booksContainer.appendChild(bookContainer); 
+        booksContainer.appendChild(bookContainer);
     }
 }
 
@@ -106,15 +107,15 @@ function clearDisplay() {
 }
 
 function clearForm() {
-    authorData.value = null; 
-    titleData.value = null; 
-    pagesData.value = null; 
+    authorData.value = null;
+    titleData.value = null;
+    pagesData.value = null;
     // reset radio 
-    enjoyabilityData.value = null; 
+    enjoyabilityData.value = null;
 }
 
 function closeForm() {
-    form.style.cssText = "display: none;"; 
+    form.style.cssText = "display: none;";
 }
 
 function displayForm() {

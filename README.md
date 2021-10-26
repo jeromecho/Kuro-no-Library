@@ -8,6 +8,10 @@
 * Local data storage on localStorage 
 * Simple, intuitive UI 
 
+EDIT: 
+
+- This branch has been refactored to use class.
+
 ## Images 
  
 ![image](https://user-images.githubusercontent.com/71617542/130335934-75ffe999-2e18-42a5-a601-600686cbe2b0.png)
