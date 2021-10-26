@@ -24,6 +24,7 @@ submitButton.addEventListener("click", () => {
     closeForm();
 });
 
+// refactored to use class
 class Book {
     constructor (author, title, pages, read, enjoyment) {
         this.author = author;

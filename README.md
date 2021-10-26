@@ -10,7 +10,7 @@
 
 EDIT: 
 
-- This branch has been refactored to use class.
+- Branch has been refactored to use class.
 
 ## Images 
  
