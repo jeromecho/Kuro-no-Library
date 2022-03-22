@@ -18,11 +18,37 @@ let books = [
 
 addButton.addEventListener("click", displayForm); 
 closeButton.addEventListener("click", closeForm); 
-submitButton.addEventListener("click", () => {
-    addToBooks();
-    clearForm();
-    closeForm();
+
+submitButton.addEventListener("click", (e) => {
+    if (checkValidity(e)) {
+      addToBooks();
+      clearForm();
+      closeForm();
+    }
 }); 
+
+// fix rbs
+
+function checkValidity() {
+    if (!authorData.valididty.valid) {
+        return false;
+    } else if (!titleData.validity.valid) {
+        return false;
+    } else if (!pagesData.validity.valid) {
+        return false;
+    } else if (!enjoyabilityData.validity.valid) {
+        return false;
+    } else if (!rbs[0].checked && !rbs[1].checked) {
+        e.preventDefault();
+        return false;
+    } else{
+        return true;
+    }
+}
+
+// only when input is validated, then submit form to JS file 
+// when code is sent to JS file, do something with that data 
+// if event "invalid", display error messages
 
 function Book (author, title, pages, read, enjoyment) {
     // object constructor
@@ -50,7 +76,7 @@ function addToBooks() {
 }
 
 function displayBooks() {
-    books = JSON.parse(localStorage.getItem("books")); 
+    books = JSON.parse(localStorage.getItem("books"));
     for (let i = 0; i < books.length; i++) { 
         const bookContainer = document.createElement("div");
         bookContainer.setAttribute("data-number", i); 
@@ -152,6 +178,7 @@ if (checkAvailability("localStorage")) {
 function updateLocalstorage() {
     localStorage.setItem("books", JSON.stringify(books));
 }
+
 
 if (localStorage.books === null) {
     updateLocalstorage();
